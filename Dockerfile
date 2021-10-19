@@ -10,7 +10,7 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 ENV BACKEND_STORE_URI="postgresql://postgres:@sql-service:5432/postgres"
-ENV DEFAULT_ARTIFACT_ROOT="s3://teststest"
+ENV DEFAULT_ARTIFACT_ROOT="s3://teststest/"
 
 # Port
 EXPOSE 8080
