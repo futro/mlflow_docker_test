@@ -17,4 +17,4 @@ ENV DEFAULT_ARTIFACT_ROOT="/opt/artifact"
 # Port
 EXPOSE 8080
 
-CMD mlflow server --host 0.0.0.0 --port 8080 --default-artifact-root /mlflow #--backend-store-uri $BACKEND_STORE_URI  --default-artifact-root $DEFAULT_ARTIFACT_ROOT
+CMD mlflow server --host 0.0.0.0 --port 8080 --backend-store-uri postgresql://postgres:@sql-service:5432/postgres #--backend-store-uri $BACKEND_STORE_URI  --default-artifact-root $DEFAULT_ARTIFACT_ROOT
