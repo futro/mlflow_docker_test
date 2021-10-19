@@ -9,7 +9,7 @@ RUN apt-get update -y \
 COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
-ENV BACKEND_STORE_URI="postgresql://postgres:@postgresql:5432/postgres"
+ENV BACKEND_STORE_URI="postgresql://postgres:postgres@postgresql:5432/postgres"
 ENV DEFAULT_ARTIFACT_ROOT="s3://teststest/"
 
 # Port
