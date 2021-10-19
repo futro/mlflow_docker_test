@@ -9,10 +9,12 @@ RUN apt-get update -y \
 COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
+RUN mkdir /mlflow/
+
 ENV BACKEND_STORE_URI=""
-#ENV DEFAULT_ARTIFACT_ROOT="/opt/artifact"
+ENV DEFAULT_ARTIFACT_ROOT="/opt/artifact"
 
 # Port
 EXPOSE 8080
 
-CMD mlflow server --host 0.0.0.0 --port 8080 #--backend-store-uri $BACKEND_STORE_URI  --default-artifact-root $DEFAULT_ARTIFACT_ROOT
+CMD mlflow server --host 0.0.0.0 --port 8080 --file-store /mlflow #--backend-store-uri $BACKEND_STORE_URI  --default-artifact-root $DEFAULT_ARTIFACT_ROOT
